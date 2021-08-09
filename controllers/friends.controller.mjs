@@ -50,7 +50,7 @@ export const addFriendToMyList = async (req, res, next) => {
             if (CurrentUser.friends.length > 0) {
                 CurrentUser.friends.forEach(async el => {
                     if (el.email === found.email) {
-                        return next(Boom.badRequest("No se puede agregar porque ya existe en tu lista de amigos."));
+                        return next(Boom.badRequest(`It cannot be added because it already exists in your friends list.`));
                     } else {
                         const info = await updateFriends(CurrentUser, found, req.user.email);
                         return res.send(info);
@@ -61,7 +61,7 @@ export const addFriendToMyList = async (req, res, next) => {
                 return res.send(info);
             }
         } else {
-            next(Boom.badRequest("No se puede agregar a tu lista de amigos, ya que no hay coincidencias de peliculas"));
+            next(Boom.badRequest("Cannot be added to your friends list, as there are no movie matches."));
         }
     } catch(e) {
         next(Boom.badRequest(e.message));
@@ -101,7 +101,7 @@ export const deleteFriends = async (req, res, next) => {
             const info = await db.getAll('users', {email: req.user.email});
             return res.send(info);
         } else {
-            next(Boom.badRequest("No existe el usuario"));
+            next(Boom.badRequest("User not found"));
         }
     } catch(e) {
         next(Boom.badRequest(e.message));
@@ -126,7 +126,7 @@ export const profileFriend = async (req, res, next) => {
                 const profile = await getCurrentUser('users', {email: friendProfile.email});
                 res.send(profile);
             } else {
-                next(Boom.badRequest("No puedes acceder a este perfil, ya que no es tu amigo."));
+                next(Boom.badRequest("You cannot access this profile as it is not your friend."));
             }
         }
     } catch(e) {

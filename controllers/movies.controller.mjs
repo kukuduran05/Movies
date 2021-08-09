@@ -26,7 +26,7 @@ export const updateMovies = async (req, res, next) => {
             const info = await db.getOne('users', {_id: ObjectId(idUser)});
             return res.send(info);
         } else {
-            next(Boom.badRequest("Debe esperar un minuto para poder actualizar la pelicula"));
+            next(Boom.badRequest("You must wait a minute to update the movie."));
         }   
     } catch(e) {
         next(Boom.badRequest(e.message));

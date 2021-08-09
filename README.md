@@ -1,23 +1,23 @@
 ## This project was created with nodejs and express also I used mongoDB
 
-### Hacer un REST API que contenga endpoints para las siguientes acciones:
-1. Registrar un usuario que contenga la siguiente información además de sus credenciales de 1 a 2 películas favoritas.
-2. Cambiar películas favoritas.
-3. Obtener todas las películas únicas registradas
-4. Sugerir un amigo: de manera aleatoria regresar un nombre de usuario de alguno que coincida con almenos una película.
-5. Agregar amigo a mi lista.
-6. Ver lista de amigos.
-7. Eliminar amigos de mi lista
-8. Borrar mi cuenta.
-9. Ver perfil de su amigo (lista de amigos y películas favoritas).
+### Create a REST API with endpoints for the next actions:
+1. Create a new user with the next information in addition to your credentials from 1 to 2 favorite movies.
+2. Update favorite movies.
+3. Get all registered unique movies.
+4. Suggest a friend: Randomly return an username from one that matches at least one movie.
+5. Add friends to my list.
+6. Show friends list.
+7. Delete friends from my list.
+8. Delete my account.
+9. Show friend profile (Friends list and Favorite movies).
 
-### Restricciones:
+### Restrictions:
 
-- Al registrar usuario regresar lista de sugerencia de amigos que coincidan con las 2 películas favoritas al mismo tiempo.
-- Es obligatoria almenos tener una película Favorita.
-- A partir del punto 2 los requests deben usar cualquier método de autenticación.
-- No se pueden agregar más de 2 películas favoritas
-- Cambiar las películas tiene una restricción de 1 minuto de diferencia desde la ultima modificación, de lo contrario regresar un error.
-- Solo puedes agregar amigos que tengan una coincidencia de película de lo contrario regresar un error.
-- Ver el perfil de amigos debe estar restringido a aquellos que son realmente tus amigos.
-- Cualquier coincidencia por película debe ser 'case-insensitive.
+- When registering user return suggestion list of friends that match 2 favorite movies at the same time.
+- It is mandatory to have at least one Favorite movie.
+- From point 2 the requests must use any authentication method.
+- No more than 2 favorite movies can be added.
+- Changing the movies has a restriction of 1 minute difference from the last modification, otherwise an error will be returned.
+- You can only add friends who have a movie match otherwise it will return an error.
+- Viewing the profile of friends should be restricted to those who are really your friends.
+- Any matches per movie must be case-insensitive.
