@@ -1,6 +1,5 @@
 import * as MongoDB from "mongodb";
 import dotenv from 'dotenv';
-import { ObjectId } from 'mongodb'
 
 dotenv.config({ silent: process.env.NODE_ENV === 'production' });
 
