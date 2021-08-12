@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config({ silent: process.env.NODE_ENV === 'production' });
 export const options = {
     definition: {
         openapi: "3.0.0",
@@ -8,7 +10,7 @@ export const options = {
         },
         servers: [
             {
-                url: "http://localhost:3000"
+                url: process.env.NODE_ENV === 'production' ? process.env.aws_url_prod+':'+process.env.PORT : process.env.aws_url_dev+':'+process.env.PORT
             }
         ]
     },

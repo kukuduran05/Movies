@@ -1,7 +1,5 @@
 import MovieService from '../services/movies.mjs';
-import DB from '../db.mjs';
 import Boom from '@hapi/boom';
-import { ObjectId } from 'mongodb';
 
 const movie = new MovieService();
 
